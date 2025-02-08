@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose Day</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="flex justify-center mt-[130px] items-center flex-col" id="first">
+        <div>
+            <img src="image-1.gif" alt="">
+        </div>
+        <h1 class="text-3xl font-bold">Happy Purpose Day😍😍</h1>
+        <p>Do you love me</p>
+        <div class="mt-2">
+            <button onclick="NoOption('yes')" type="button"
+                class="cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Yes</button>
+            <button onclick="NoOption('first')" type="button"
+                class="cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">No</button>
+        </div>
+    </div>
+    <div class="hidden justify-center mt-[130px] items-center flex-col" id="second">
+        <div>
+            <img src="image-2.gif" alt="">
+        </div>
+        <h1 class="text-3xl font-bold">Soch Lo Acha Sa❤️❤️</h1>
+        <p>Do you love me</p>
+        <div class="mt-2">
+            <button onclick="NoOption('yes')" type="button"
+                class="cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Yes</button>
+            <button onclick="NoOption('second')" type="button"
+                class="cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">No</button>
+        </div>
+    </div>
+    <div class="hidden justify-center mt-[130px] items-center flex-col" id="third">
+        <div>
+            <img src="image-3.gif" alt="">
+        </div>
+        <h1 class="text-3xl font-bold">Ek Aur Bar Souch lo🧐🧐</h1>
+        <p>Do you love me</p>
+        <div class="mt-2">
+            <button onclick="NoOption('yes')" type="button"
+                class="cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Yes</button>
+            <button onclick="NoOption('third')" type="button"
+                class="cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">No</button>
+        </div>
+    </div>
+    <div class="hidden justify-center mt-[130px] items-center flex-col" id="forth">
+        <div>
+            <img src="image-4.gif" alt="">
+        </div>
+        <h1 class="text-3xl font-bold">Dost nhe ho man jaw🥺🥺</h1>
+        <p>Do you love me</p>
+        <div class="mt-2">
+            <button onclick="NoOption('yes')" type="button"
+                class="cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Yes</button>
+            <button onclick="moveOptionNo()" id="oldButton" type="button"
+                class="cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">No</button>
+        </div>
+    </div>
+    <div class="hidden justify-center mt-[130px] items-center flex-col" id="fifth">
+        <div>
+            <img src="yes.gif" alt="">
+        </div>
+        <h1 class="text-3xl font-bold text-center">Hurray 😜😜<br> Rizwan Is your Date now</h1>
+    </div>
+
+
+    <button onclick="moveOptionNo()" id="moveNo" type="button"
+        class="hidden cursor-pointer text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">No</button>
+
+
+    <script>
+        function NoOption(option) {
+            document.getElementById('first').classList.add('hidden');
+            document.getElementById('second').classList.add('hidden');
+            document.getElementById('third').classList.add('hidden');
+            document.getElementById('forth').classList.add('hidden');
+            document.getElementById('fifth').classList.add('hidden');
+            document.getElementById('moveNo').classList.add('hidden');
+
+            if (option == 'yes') {
+                document.getElementById('fifth').classList.remove('hidden');
+                document.getElementById('fifth').classList.add('flex');
+            }
+            else if (option == 'first') {
+                document.getElementById('second').classList.remove('hidden');
+                document.getElementById('second').classList.add('flex');
+            }
+            else if (option == 'second') {
+                document.getElementById('third').classList.remove('hidden');
+                document.getElementById('third').classList.add('flex');
+            }
+            else if (option == 'third') {
+                document.getElementById('forth').classList.remove('hidden');
+                document.getElementById('forth').classList.add('flex');
+            }
+
+        }
+
+        function moveOptionNo() {
+            console.log((Math.random(1, 20) * 100) + 'px');
+            document.getElementById('moveNo').style.position = 'absolute';
+            document.getElementById('moveNo').classList.remove('hidden');
+            document.getElementById('oldButton').classList.add('hidden');
+            document.getElementById('moveNo').classList.add('flex');
+            document.getElementById('moveNo').style.right = (Math.random(1, 20) * 1000) + 'px';
+            document.getElementById('moveNo').style.top = (Math.random(1, 20) * 1000) + 'px';
+
+        }
+    </script>
+</body>
+
+</html>
